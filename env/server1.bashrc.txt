@@ -1,0 +1,50 @@
+
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+#
+#Specific Configuration
+#
+export PS1='[\u@\h \w]\$'
+export PS1='\[\e[31;1m\][\u@\h\[\e[33;1m\] \w]\$ \[\e[m\]'
+
+alias lsf='ls -l | grep "^-"'
+alias lsd='ls -l | grep "^d"'
+alias ls='ls --color=auto -h -F'
+alias pps='ps -ef | head -1 ; ps -ef | grep $1'
+alias vi='/usr/bin/vim'
+alias grep='grep -i  --color'
+alias df='df -h -T'
+
+alias fwcmd='firewall-cmd --permanent'
+alias fwreload='firewall-cmd --reload'
+alias fwlist='firewall-cmd --list-all'
+
+#
+# DNS Server Alias
+#
+alias named.conf='vi /etc/named.conf'
+alias named.rfc1912.zones='vi /etc/named.rfc1912.zones' 
+alias DNS='cd /var/named'
+alias dnslog='tail -f /var/log/messages'
+
+alias chrome='google-chrome-stable'
+
+
+#
+# Samba Server Alias
+#
+alias smb.conf='vi /etc/samba/smb.conf'
+alias SMB='cd /etc/samba'
+alias smblog='tail -f /var/log/samba/log.smbd'
+alias nmblog='tail -f /var/log/samba/log.nmbd'
